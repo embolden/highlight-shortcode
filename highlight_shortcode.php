@@ -12,6 +12,24 @@ Author URI: http://www.thenetimpact.com
 License: GPLv2 or later
 */
 
+function tnihs_highlight_shortcode( $atts, $content = null ) {
+  $defaults = array(
+    'caption' => '',
+    'class' => ''
+  );
+  $attr = shortcode_atts( $defaults, $atts );
+
+  $output = '<div class="highlight ' . esc_attr( $attr['class'] ) . '">';
+  if( $attr['caption'] ) {
+    $output .= '<span class="highlight-caption">' . esc_attr( $attr['caption'] ) . '</span>';
+  }
+  $output .= do_shortcode( wpautop( $content ) ) . '</div>';
+
+  return $output;
+}
+add_shortcode( 'highlight', 'tnihs_highlight_shortcode' );
+
+
 /*
  * http://wordpress.stackexchange.com/questions/72394/how-to-add-a-shortcode-button-to-the-tinymce-editor
  */
