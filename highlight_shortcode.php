@@ -23,7 +23,7 @@ function tnihs_highlight_shortcode( $atts, $content = null ) {
   if( $attr['caption'] ) {
     $output .= '<span class="highlight-caption">' . esc_attr( $attr['caption'] ) . '</span>';
   }
-  $output .= do_shortcode( wpautop( $content ) ) . '</div>';
+  $output .= do_shortcode( $content ) . '</div>';
 
   return $output;
 }
