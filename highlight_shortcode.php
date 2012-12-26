@@ -37,7 +37,7 @@ add_action('init', 'tnihs_shortcode_button_init');
 
 //This callback registers our plug-in
 function tnihs_register_tinymce_plugin( $plugin_array ) {
-  $plugin_array['tnihs_button'] = 'js/highlight_shortcode.js';
+  $plugin_array['tnihs_button'] = plugin_dir_url( __FILE__ ) . 'js/highlight_shortcode.js';
   return $plugin_array;
 }
 
