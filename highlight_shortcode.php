@@ -21,7 +21,7 @@ function tnihs_highlight_shortcode( $atts, $content = null ) {
 
   $output = '<div class="highlight ' . esc_attr( $attr['class'] ) . '">';
   if( $attr['caption'] ) {
-    $output .= '<span class="highlight-caption">' . esc_attr( $attr['caption'] ) . '</span>';
+    $output .= '<p class="highlight-caption">' . esc_attr( $attr['caption'] ) . '</p>';
   }
   $output .= do_shortcode( $content ) . '</div>';
 
